@@ -1,7 +1,7 @@
 #include <stdio.h>
  
 int counter() {
-    int count = 0;
+    static int count = 0;
     count++;
     return count;
 }
