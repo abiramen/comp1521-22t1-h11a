@@ -3,10 +3,6 @@
 
         .text
 main:
-                                        # int n in $t0
-                                        # int fac in $t1
-                                        # int i in $t2
-
         li      $v0, 4
         la      $a0, prompt_msg
         syscall                         # printf("n  = ")
