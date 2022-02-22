@@ -14,12 +14,12 @@ main:
 
         li      $v0, 1
         move    $a0, $t1
-        syscall
+        syscall                         # printf("%d", y);
 
 
         li      $v0, 11
         li      $a0, '\n'
-        syscall
+        syscall                         # putchar('\n')
 
 
         li      $v0, 0                  # return 0;
