@@ -9,10 +9,22 @@ int main(void) {
     scanf("%d", &n);
  
     int fac = 1;
-    for (int i = 1; i <= n; i++) {
-        fac *= i;
-    }
- 
-    printf("n! = %d\n", fac);
+
+loop_i_to_n_init:
+    int i = 1;
+
+loop_i_to_n_step:
+    if (i > n) goto loop_i_to_n_end;
+    fac *= i;
+    i++;
+    goto loop_i_to_n_step;
+
+loop_i_to_n_end: 
+    // printf("%d! = %d\n", n, fac);
+    printf("%d", n);
+    printf("! = ");
+    printf("%d", fac);
+    putchar('\n');
+
     return 0;
 }
