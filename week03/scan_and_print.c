@@ -2,7 +2,7 @@
  
 int main(void) {
     int i;
-    int numbers[10] = {0};
+    int numbers[10];
  
     i = 0;
     while (i < 10) {
@@ -15,4 +15,5 @@ int main(void) {
         printf("%d ", numbers[i]);
         i++;
     }
+    putchar('\n');
 }
