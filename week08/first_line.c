@@ -32,6 +32,6 @@ int main(int argc, char *argv[]) {
     }
 
     putchar('\n');
-
+    fclose(stream);
     return 0;
 }

@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
         fputc(c, stream);
     }
     fputc('\n', stream);
-
+    fclose(stream);
     return 0;
 }
 
