@@ -42,5 +42,20 @@ int main(int argc, char *argv[]) {
 }
 
 void chmod_if_needed(char *pathname) {
-    // TODO: Implement this function.
+    struct stat statbuf;
+    if (stat(pathname, &statbuf) != 0) {
+        perror(pathname);
+        exit(1);
+    }
+
+    if (statbuf.st_mode & S_IWOTH) {
+        // we need to remove public write
+        if (chmod(pathname, statbuf.st_mode & ~S_IWOTH) != 0) {
+            perror(pathname);
+            exit(1);
+        }
+        printf("removing public write from %s\n", pathname);
+    } else {
+        printf("%s is not publically writable\n", pathname);
+    }
 }

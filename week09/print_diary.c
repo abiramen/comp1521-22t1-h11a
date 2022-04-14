@@ -14,8 +14,16 @@
  
  
 int main(void) {
+    // $HOME = /home/abiram
+    // /home/abiram/.diary
+
+    char *home = getenv("HOME");
+    int pathlen = strlen(home) + strlen(DIARY_PATH) + 1;
+    char *full_path = malloc(pathlen * sizeof(char));
+
+    snprintf(full_path, pathlen, "%s%s\n", getenv("HOME"), DIARY_PATH);
+
  
-    // TODO: construct full_path in order to open the file 
     FILE *stream = fopen(full_path, "r");
     if (stream == NULL) {
         perror(full_path);
