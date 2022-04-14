@@ -4,7 +4,6 @@
  * 
  * Be sure to handle any errors!
  * snprintf is a convenient function for constructing the pathname of the diary file.
- * (it's also pretty handy for subset3 of a certain assignment.)
  */
 #include <stdlib.h>
 #include <stdio.h>
